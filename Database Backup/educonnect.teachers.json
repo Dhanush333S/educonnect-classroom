@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "65e1db5d4e111329c9c8261d"
+  },
+  "userType": "teacher",
+  "teacherID": {
+    "$numberLong": "1709300309004"
+  },
+  "teacherName": "M. Visvesvaraya",
+  "mobile": {
+    "$numberLong": "9876123450"
+  },
+  "email": "dhanush.placements333@gmail.com",
+  "password": "123456",
+  "age": 50,
+  "gender": "male",
+  "subject": "Physics",
+  "DOB": {
+    "$date": "1982-12-11T18:30:00.000Z"
+  },
+  "address": "Mysore",
+  "education": "Engineering",
+  "image": "https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg",
+  "details": "A great man",
+  "__v": 0
+}]

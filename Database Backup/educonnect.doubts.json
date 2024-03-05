@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "65e1ddd758c8ade9df9ad708"
+  },
+  "class": "5",
+  "studentID": "65e1d6274e111329c9c82615",
+  "subject": "Physics",
+  "teacher": "M. Visvesvaraya",
+  "details": "What is reflection ?",
+  "date": {
+    "$date": "2024-03-01T13:52:27.652Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1dde458c8ade9df9ad70a"
+  },
+  "class": "5",
+  "studentID": "65e1d6274e111329c9c82615",
+  "subject": "Physics",
+  "teacher": "M. Visvesvaraya",
+  "details": "What is Physics ?",
+  "date": {
+    "$date": "2024-03-01T13:52:27.652Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e73ce4dcd5280871d9f8b7"
+  },
+  "class": "7",
+  "studentID": "65e1d6274e111329c9c82615",
+  "subject": "Physics",
+  "teacher": "M. Visvesvaraya",
+  "details": "What is 2+2 ?",
+  "date": {
+    "$date": "2024-03-05T00:00:00.000Z"
+  },
+  "__v": 0
+}]

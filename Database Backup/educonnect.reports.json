@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "65e1dfa13cd8630323e6a153"
+  },
+  "details": "Not Attending Classes",
+  "name": "Ram",
+  "age": 20,
+  "email": "ssdhanush.cs21@rvce.edu.in",
+  "gender": "Male",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "marks": [
+    {
+      "subject": "Physics",
+      "score": 46,
+      "total": 50,
+      "_id": {
+        "$oid": "65e1dfa13cd8630323e6a154"
+      }
+    }
+  ],
+  "date": {
+    "$date": "2024-03-01T13:57:28.778Z"
+  },
+  "class": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e73d6f73f9ad27e2bf59d9"
+  },
+  "details": "Not Attending Classes",
+  "name": "Rohan",
+  "age": 20,
+  "email": "ssdhanush.cs21@rvce.edu.in",
+  "gender": "Male",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "marks": [
+    {
+      "subject": "Physics",
+      "score": 46,
+      "total": 50,
+      "_id": {
+        "$oid": "65e1dfa13cd8630323e6a154"
+      }
+    }
+  ],
+  "date": {
+    "$date": "2024-03-01T13:57:28.778Z"
+  },
+  "class": 5,
+  "__v": 0
+}]

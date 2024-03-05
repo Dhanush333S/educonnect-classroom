@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "65e179e01723344f57cf832a"
+  },
+  "details": "Due to Holi Holiday has been declared",
+  "title": "Holiday Declaration !!",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e17a3213475877b9806d8e"
+  },
+  "details": "Due to Holi Holiday has been declared",
+  "title": "Holiday Declaration !!",
+  "date": {
+    "$date": "2024-03-01T06:48:13.744Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e17be97a5cb0e4a8a39935"
+  },
+  "details": "Due to Holi Holiday has been declared",
+  "title": "Holiday Declaration !!",
+  "date": {
+    "$date": "2024-03-01T00:00:00.000Z"
+  },
+  "__v": 0
+}]

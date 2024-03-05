@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "65e1d6274e111329c9c82615"
+  },
+  "userType": "student",
+  "studentID": {
+    "$numberLong": "1709299112629"
+  },
+  "studentName": "Ram",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "email": "ssdhanush.cs21@rvce.edu.in",
+  "password": "123456",
+  "age": 20,
+  "gender": "Male",
+  "DOB": "12-10-2010",
+  "address": "Bengaluru",
+  "class": "5",
+  "image": "https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg",
+  "details": "Brave Enthusiastic",
+  "__v": 0
+}]

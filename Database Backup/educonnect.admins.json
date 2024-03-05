@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "65e1627a643202f89f657276"
+  },
+  "userType": "admin",
+  "adminID": {
+    "$numberLong": "1709269557533"
+  },
+  "adminName": "Dhanush",
+  "email": "dha3102003@gmail.com",
+  "password": "123456",
+  "gender": "Male",
+  "age": 32,
+  "mobile": 1234567890,
+  "DOB": "03-10-2003",
+  "address": "Bangalore",
+  "education": "B E",
+  "image": "https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg",
+  "__v": 0
+}]
