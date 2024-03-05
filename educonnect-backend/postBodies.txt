@@ -1,0 +1,40 @@
+{
+    "adminName": "Dhanush",
+    "age": "32",
+    "mobile": "1234567890",
+    "email": "dha3102003@gmail.com",
+    "gender": "Male",
+    "DOB": "03-10-2003",
+    "address": "Bangalore",
+    "education": "B E",
+    "adminID": "1709269557533",
+    "password": "123456"
+  }
+
+  {
+    "studentName": "Bheem",
+    "age": "20",
+    "mobile": "9876543210",
+    "email": "ssdhanush.cs21@rvce.edu.in",
+    "gender": "Male",
+    "DOB": "12-10-2010",
+    "address": "Bengaluru",
+    "class": "5",
+    "studentID": "1709299112629",
+    "password": "123456"
+}
+
+{
+    "teacherName": "M. Visvesvaraya",
+    "age": "50",
+    "mobile": "9876123450",
+    "email": "dhanush.placements333@gmail.com",
+    "gender": "Male",
+    "DOB": "12-12-1982",
+    "address": "Mysore",
+    "education": "Engineering",
+    "subject": "Physics",
+    "teacherID": "1709300309004",
+    "password": "123456",
+    "details": "A great man"
+  }
