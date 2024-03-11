@@ -37,8 +37,6 @@ const studentSchema = mongoose.Schema({
     type: String,
   },
 
-  
-
   DOB: {
     type: String,
   },

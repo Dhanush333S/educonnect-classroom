@@ -32,9 +32,8 @@ export const AddDoubts = (data) => async () => {
 export const GetDoubts = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.GET_DOUBT_REQUEST });
-    const res = await axios.post(
-      process.env.REACT_APP_API_URL+"/doubts",
-      data
+    const res = await axios.get(
+      process.env.REACT_APP_API_URL+"/doubts"
     );
     dispatch({
       type: types.GET_DOUBT_SUCCESS,
@@ -97,7 +96,7 @@ export const GetTeachers = () => async (dispatch) => {
     const res = await axios.get(
       process.env.REACT_APP_API_URL+`/teachers`
     );
-    console.log(res.data);
+    console.log("res.data");
     dispatch({
       type: types.GET_TEACHERS_SUCCESS,
       payload: res.data,

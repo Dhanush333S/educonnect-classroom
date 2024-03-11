@@ -1,9 +1,8 @@
 import React, {  useState } from "react";
-import "../Teacher/CSS/TeacherProfile.css";
+import "./CSS/TeacherProfile.css";
 import { BiTime } from "react-icons/bi";
 import { GiMeditation } from "react-icons/gi";
 import { AiFillCalendar, AiFillEdit } from "react-icons/ai";
-import { MdBloodtype } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BsHouseFill, BsGenderAmbiguous } from "react-icons/bs";
 import { MdOutlineCastForEducation } from "react-icons/md";
@@ -17,6 +16,9 @@ import "./CSS/TeacherProfile.css";
 
 const Doctor_Profile = () => {
   const { data } = useSelector((store) => store.auth);
+  const {
+    data: { user },
+  } = useSelector((state) => state.auth);
 
   const disptach = useDispatch();
 
@@ -47,21 +49,24 @@ const Doctor_Profile = () => {
   };
 
   const [formData, setFormData] = useState({
-    teacherName: data.user.teacherName,
-    age: data.user.age,
-    gender: data.user.gender,
-    subject: data.user.subject,
-    education: data.user.education,
-    mobile: data.user.mobile,
-    DOB: data.user.DOB,
+    teacherName: user.teacherName,
+    age: user.age,
+    gender: user.gender,
+    education: user.education,
+    mobile: user.mobile,
+    DOB: user.DOB,
+    image:user.image
   });
+  console.log(formData)
 
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = () => {
-    disptach(UpdateTeacher(formData, data.user._id));
+  const handleFormSubmit =() => {
+    setFormData({ ...formData, DOB: formData.DOB.slice(0, 10) });
+    console.log('Ehh',formData)
+    disptach(UpdateTeacher(formData, user.id));
     success("user updated");
     handleOk();
   };
@@ -70,7 +75,7 @@ const Doctor_Profile = () => {
     return <Navigate to={"/"} />;
   }
 
-  if (data?.user.userType !== "teacher") {
+  if (user.userType !== "teacher") {
     return <Navigate to={"/dashboard"} />;
   }
 
@@ -83,24 +88,20 @@ const Doctor_Profile = () => {
           <div className="maindoctorProfile">
             <div className="firstBox">
               <div>
-                <img src={data?.user?.image} alt="docimg" />
+                <img src={user?.image} alt="docimg" style={{height:'250px'}}/>
               </div>
               <hr />
               <div className="singleitemdiv">
                 <GiMeditation className="singledivicons" />
-                <p>{data?.user?.teacherName}</p>
-              </div>
-              <div className="singleitemdiv">
-                <MdBloodtype className="singledivicons" />
-                <p>{data?.user?.subject}</p>
+                <p>{user?.teacherName}</p>
               </div>
               <div className="singleitemdiv">
                 <FaBirthdayCake className="singledivicons" />
-                <p>{data?.user?.DOB}</p>
+                <p>{user?.DOB}</p>
               </div>
               <div className="singleitemdiv">
                 <BsFillTelephoneFill className="singledivicons" />
-                <p>{data?.user?.mobile}</p>
+                <p>{user?.mobile}</p>
               </div>
               <div className="singleitemdiv">
                 <button onClick={showModal}>
@@ -147,13 +148,6 @@ const Doctor_Profile = () => {
                     <option value="other">Others</option>
                   </select>
                   <input
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleFormChange}
-                    type="text"
-                    placeholder="subject"
-                  />
-                  <input
                     name="education"
                     value={formData.education}
                     onChange={handleFormChange}
@@ -174,6 +168,13 @@ const Doctor_Profile = () => {
                     type="date"
                     placeholder="Date of birth"
                   />
+                  <input
+                    name="image"
+                    value={formData.image}
+                    onChange={handleFormChange}
+                    type="text"
+                    placeholder="Image"
+                  />
                 </form>
               </Modal>
             </div>
@@ -185,20 +186,20 @@ const Doctor_Profile = () => {
                 </h2>
                 <div className="singleitemdiv">
                   <BsGenderAmbiguous className="singledivicons" />
-                  <p>{data?.user?.gender}</p>
+                  <p>{user?.gender}</p>
                 </div>
                 <div className="singleitemdiv">
                   <AiFillCalendar className="singledivicons" />
-                  <p>{data?.user?.age}</p>
+                  <p>{user?.age}</p>
                 </div>
 
                 <div className="singleitemdiv">
                   <MdOutlineCastForEducation className="singledivicons" />
-                  <p>{data?.user?.education}</p>
+                  <p>{user?.education}</p>
                 </div>
                 <div className="singleitemdiv">
                   <BsHouseFill className="singledivicons" />
-                  <p>{data?.user?.address}</p>
+                  <p>{user?.address}</p>
                 </div>
               </div>
               {/* ***********  Third Div ******************** */}

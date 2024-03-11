@@ -1,0 +1,154 @@
+create database educonnect;
+
+use educonnect;
+
+CREATE TABLE admin (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userType VARCHAR(255) DEFAULT 'admin',
+  adminID BIGINT NOT NULL UNIQUE,
+  adminName VARCHAR(255) NOT NULL UNIQUE,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  gender VARCHAR(255),
+  DOB DATE,
+  age INT,
+  mobile BIGINT,
+  address VARCHAR(255),
+  education VARCHAR(255),
+  image VARCHAR(255) DEFAULT 'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg'
+);
+
+create Trigger before_insert_admin
+before INSERT on admin
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+create Trigger before_update_admin
+before update on admin
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+Create TABLE student (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userType VARCHAR(255) DEFAULT 'student',
+  studentID BIGINT NOT NULL UNIQUE,
+  studentName VARCHAR(255),
+  mobile BIGINT,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  age INT,
+  gender VARCHAR(255),
+  DOB DATE,
+  address VARCHAR(255),
+  class VARCHAR(255),
+  image VARCHAR(255) DEFAULT 'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg',
+  details VARCHAR(255)
+);
+
+create Trigger before_insert_student
+before INSERT on student
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+create Trigger before_update_student
+before update on student
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+CREATE TABLE teacher (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userType VARCHAR(255) DEFAULT 'teacher',
+  teacherID BIGINT NOT NULL UNIQUE,
+  teacherName VARCHAR(255),
+  mobile BIGINT,
+  email VARCHAR(255) NOT NULL unique,
+  password VARCHAR(255) NOT NULL,
+  age INT,
+  gender VARCHAR(255),
+  DOB DATE,
+  address VARCHAR(255),
+  education VARCHAR(255),
+  image VARCHAR(255) DEFAULT 'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg',
+  details VARCHAR(255)
+);
+
+
+create Trigger before_insert_teacher
+before INSERT on teacher
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+create Trigger before_update_teacher
+before update on teacher
+FOR EACH row
+SET NEW.age=year(current_date()) - year(new.DOB)-(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(NEW.DOB, '%m%d'));
+
+CREATE TABLE Manage (
+  studentID INT,
+  teacherID INT,
+  PRIMARY KEY (studentID, teacherID),
+  FOREIGN KEY (studentID) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (teacherID) REFERENCES teacher(id) ON DELETE CASCADE
+);
+
+CREATE TABLE QuestionPaper (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  testID BIGINT NOT NULL,
+  subject VARCHAR(255) NOT NULL,
+  questionNumber INT NOT NULL,
+  marksAllotted INT NOT NULL,
+  CONSTRAINT unique_question UNIQUE (testID, questionNumber)
+);
+
+CREATE TABLE TestResults (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  studentID int NOT NULL,
+  testID BIGINT NOT NULL,
+  questionNumber INT NOT NULL,
+  marksObtained INT NOT NULL,
+  CONSTRAINT unique_result UNIQUE (studentID, testID, questionNumber),
+  FOREIGN KEY (studentID) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (testID, questionNumber) REFERENCES QuestionPaper(testID, questionNumber) ON DELETE CASCADE
+);
+
+CREATE TABLE GradeSchema (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  grade VARCHAR(255) NOT NULL,
+  minMarks INT NOT NULL,
+  maxMarks INT NOT NULL,
+  details VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Doubt (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  class VARCHAR(255),
+  studentID INT,
+  subject VARCHAR(255),
+  teacherID INT,
+  details VARCHAR(255),
+  date DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (studentID) REFERENCES student(id) ON DELETE CASCADE,
+	FOREIGN KEY (teacherID) REFERENCES teacher(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Notice (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  details VARCHAR(255),
+  title VARCHAR(255),
+  date DATETIME DEFAULT current_timestamp
+);
+
+CREATE TABLE TeacherAssignment (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  teacherID INT,
+  class VARCHAR(255),
+  subject VARCHAR(255),
+  FOREIGN KEY (teacherID) REFERENCES teacher(id) ON DELETE CASCADE
+);
+
+CREATE TABLE SolvedDoubts (
+  doubtID INT,
+  answer VARCHAR(255),
+  PRIMARY KEY (doubtID),
+  FOREIGN KEY (doubtID) REFERENCES Doubt(id) ON DELETE CASCADE
+);

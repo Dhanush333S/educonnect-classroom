@@ -24,13 +24,17 @@ const AddDoubt = () => {
     dispatch(GetTeachers());
   }, [dispatch]);
 
+  const uniqueTeacherPairs = teachers
+  ? Array.from(new Set(teachers.map((teacher) => `${teacher.teacherName}|${teacher.email}`)))
+  : [];
+
   const { data } = useSelector((store) => store.auth);
 
   const InitData = {
-    studentID: data?.user._id,
+    studentID: data?.user.id,
     class: "",
     subject: "",
-    teacher: "",
+    teacherID: "",
     date: "",
     details: ""
   };
@@ -44,16 +48,18 @@ const AddDoubt = () => {
     e.preventDefault();
     if (
       AddDoubt.class === "" ||
-      AddDoubt.teacher === "" ||
+      AddDoubt.teacherID === "" ||
       AddDoubt.subject === "" ||
       AddDoubt.studentID === "" ||
       AddDoubt.details === ""
     ) {
       return notify("Please Enter All the Requried Feilds");
     }
+    let TName=AddDoubt.teacherID.split("|")[0]
+    let TEmail=AddDoubt.teacherID.split("|")[1]
     const isMatchingTeacher = teachers.some(
       (teacher) =>
-        teacher.teacherName === AddDoubt.teacher &&
+        teacher.teacherName === TName &&
         (teacher.subject.toLowerCase()) === AddDoubt.subject.toLowerCase()
     );
 
@@ -62,8 +68,9 @@ const AddDoubt = () => {
     }
     
     setLoading(true);
-    console.log(AddDoubt);
-    dispatch(AddDoubts(AddDoubt));
+
+    const selectedTeacher = teachers.find((teacher) => teacher.teacherName === TName && teacher.email === TEmail);
+    dispatch(AddDoubts({...AddDoubt,teacherID:selectedTeacher.id}));
     notify("Doubt Asked");
     setLoading(false);
     setAddDoubt(InitData);
@@ -124,6 +131,7 @@ const AddDoubt = () => {
                     required
                   >
                     <option value="">Select Class</option>
+                    <option value="5">5</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
@@ -157,15 +165,15 @@ const AddDoubt = () => {
                 <label>Teacher</label>
                 <div className="inputdiv">
                   <select
-                    name="teacher"
-                    value={AddDoubt.teacher}
+                    name="teacherID"
+                    value={AddDoubt.teacherID}
                     onChange={HandleAppointment}
                     required
                   >
                     <option value="">Select teacher</option>
                     {
-                      teachers.map(teacher=>
-                        <option value={teacher.teacherName}>{teacher.teacherName}</option>
+                      uniqueTeacherPairs.map(teacher=>
+                        <option key={teacher} value={teacher}>{teacher}</option>
                         )
                     }
                   </select>

@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { ImMenu } from "react-icons/im";
 import { FiLogOut } from "react-icons/fi";
 import { RiAdminLine } from "react-icons/ri";
+import { LuLink } from "react-icons/lu";
 import { MdDashboardCustomize, MdQuiz } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import "./CommonCSS.css";
@@ -151,6 +152,20 @@ const Sidebar = () => {
                   className="link_text"
                 >
                   Add Notice
+                </div>
+              </Link>
+            ) : null}
+
+            {user?.userType === "admin" ? (
+              <Link className="link" activeclassname="active" to={"/managestud"}>
+                <div className="icon">
+                  <LuLink className="mainIcon" />
+                </div>
+                <div
+                  style={{ display: isOpen ? "block" : "none" }}
+                  className="link_text"
+                >
+                  Manage Students
                 </div>
               </Link>
             ) : null}

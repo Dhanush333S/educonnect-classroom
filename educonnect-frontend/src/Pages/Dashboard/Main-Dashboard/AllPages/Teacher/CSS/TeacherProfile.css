@@ -34,7 +34,8 @@
   padding: 1rem;
 }
 .firstBox div img {
-  width: 50%;
+  width: 75%;
+  height: 200px;
   margin: auto;
   border-radius: 10rem;
   background-color: #efefef;

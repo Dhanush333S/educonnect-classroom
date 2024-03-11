@@ -4,7 +4,7 @@ import { RiEmpathizeLine } from "react-icons/ri";
 import { BiNotepad, BiBus } from "react-icons/bi";
 import { FaChalkboardTeacher, FaUserAlt } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
-import { MdPayment } from "react-icons/md";
+import { BsCalendarDate } from "react-icons/bs";
 import { RiAdminLine } from "react-icons/ri";
 import Sidebar from "./Sidebar";
 import { useEffect } from "react";
@@ -96,13 +96,13 @@ const FrontPage = () => {
             </div>
             <BiNotepad className="overviewIcon" />
           </div>
-          <div className="six commondiv">
+          <div className="date commondiv">
             {" "}
             <div>
-              <h1>{data?.report}</h1>
-              <p>Reports</p>
+              <h1>{new Date().toISOString().slice(0,10)}</h1>
+              <p>Date</p>
             </div>
-            <MdPayment className="overviewIcon" />
+            <BsCalendarDate className="overviewIcon" />
           </div>
         </div>
         {/* ************************************* */}

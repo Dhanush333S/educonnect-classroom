@@ -144,6 +144,12 @@ main {
   text-align: center;
 }
 
+.date{
+  gap:2rem;
+}
+.date h1{
+  font-size: 1.5em;
+}
 .patientDetails {
   margin-top: 5rem;
 }

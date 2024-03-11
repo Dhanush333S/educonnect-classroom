@@ -1,0 +1,20 @@
+.addButton{
+    border: none;
+    font-size: 1.1em;
+    padding: 0.75em;
+    border-radius: 15%;
+    background-color: #bce0fb;
+    margin-left: 5px;
+}
+.addButton:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #9eccef;
+}
+
+.manage{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+}

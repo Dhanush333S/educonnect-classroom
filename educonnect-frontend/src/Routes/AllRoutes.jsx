@@ -12,6 +12,7 @@ import TeacherProfile from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/T
 import AddDoubt from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/AddDoubt";
 import StudentProfile from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/StudentProfile";
 import FrontPage from "../Pages/Dashboard/Main-Dashboard/GlobalFiles/FrontPage";
+import ManageStud from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/ManageStud";
 const AllRoutes = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const AllRoutes = () => {
         <Route path="/doubts" element={<AllDoubts />} />
         <Route path="/admin" element={<AddAdmin />} />
         <Route path="/addnotice" element={<AddNotice />} />
+        <Route path="/managestud" element={<ManageStud />} />
         <Route path="/checkreports" element={<CheckReports />} />
         <Route path="/createreport" element={<CreateReport />} />
         <Route path="/teacherprofile" element={<TeacherProfile />} />

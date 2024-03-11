@@ -45,12 +45,12 @@ export default function dataReducer(state = initialState, { type, payload }) {
     case types.DELETE_DOUBT_SUCCESS:
       return {
         ...state,
-        doubts: [...state.doubts.filter((ele) => ele._id !== payload)],
+        doubts: [...state.doubts.filter((ele) => ele.id !== payload)],
       };
     case types.DELETE_REPORT_SUCCESS:
       return {
         ...state,
-        reports: [...state.reports.filter((ele) => ele._id !== payload)],
+        reports: [...state.reports.filter((ele) => ele.id !== payload)],
       };
     case types.GET_REPORT_DETAILS_SUCCESS:
       return {

@@ -1,0 +1,94 @@
+INSERT INTO admin (
+  userType,
+  adminID,
+  adminName,
+  email,
+  password,
+  gender,
+  age,
+  mobile,
+  DOB,
+  address,
+  education,
+  image
+) VALUES (
+  'admin',
+  1709269557533,
+  'Dhanush',
+  'dha3102003@gmail.com',
+  '123456',
+  'Male',
+  32,
+  1234567890,
+  '2003-03-10',
+  'Bangalore',
+  'B E',
+  'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg'
+);
+
+INSERT INTO student (
+  userType,
+  studentID,
+  studentName,
+  mobile,
+  email,
+  password,
+  age,
+  gender,
+  DOB,
+  address,
+  class,
+  image,
+  details
+) VALUES (
+  'student',
+  1709299112629,
+  'Ram',
+  9876543210,
+  'ssdhanush.cs21@rvce.edu.in',
+  '123456',
+  20,
+  'Male',
+  '2010-12-10',
+  'Bengaluru',
+  '5',
+  'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg',
+  'Brave Enthusiastic'
+);
+
+INSERT INTO teacher (userType,teacherID,teacherName,mobile,email,password,age,gender,DOB,address,education,image,details
+) VALUES (
+  'teacher',
+  1709300309004,
+  'M. Visvesvaraya',
+  9876123450,
+  'dhanush.placements333@gmail.com',
+  '123456',
+  50,
+  'male',
+  '1982-12-11',
+  'Mysore',
+  'Engineering',
+  'https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg',
+  'A great man'
+);
+
+INSERT INTO GradeSchema (grade, minMarks, maxMarks, details)
+VALUES
+  ('A', 90, 100, 'Excellent'),
+  ('B', 80, 89, 'Very Good'),
+  ('C', 70, 79, 'Good'),
+  ('D', 60, 69, 'Satisfactory'),
+  ('F', 0, 59, 'Fail');
+
+INSERT INTO Notice (details, title)
+VALUES
+  ('Due to Holi Holiday has been declared', 'Holiday Declaration !!');
+
+INSERT INTO Notice (details, title, date)
+VALUES
+  ('Due to Holi Holiday has been declared', 'Holiday Declaration !!', '2024-03-01 06:48:13.744');
+
+INSERT INTO Notice (details, title, date)
+VALUES
+  ('Due to Holi Holiday has been declared', 'Holiday Declaration !!', '2024-03-01');

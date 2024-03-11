@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const reportSchema = mongoose.Schema({
-  
+const reportSchema = mongoose.Schema({ 
 
   details: {
     type: String,
@@ -9,7 +8,6 @@ const reportSchema = mongoose.Schema({
 
   name: {
     type: String,
-   
   },
 
   age: {
@@ -29,7 +27,6 @@ const reportSchema = mongoose.Schema({
 
   mobile: {
     type: Number,
-   
   },
 
   marks: [

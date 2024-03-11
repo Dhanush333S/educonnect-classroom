@@ -29,7 +29,6 @@ const AddDoctor = () => {
     DOB: "",
     address: "",
     education: "",
-    subject: "",
     teacherID: Date.now(),
     password: "",
     details: "",
@@ -150,7 +149,7 @@ const AddDoctor = () => {
                   </select>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <label>Subject</label>
                 <div className="inputdiv">
                   <select
@@ -167,7 +166,7 @@ const AddDoctor = () => {
                     <option value="general">General</option>
                   </select>
                 </div>
-              </div>
+              </div> */}
               <div>
                 <label>Birth date</label>
                 <div className="inputdiv">

@@ -30,6 +30,7 @@ const Nurse_Profile = () => {
     class: user.class,
     mobile: user.mobile,
     DOB: user.DOB,
+    image:user.image
   });
 
   const [open, setOpen] = useState(false);
@@ -62,8 +63,10 @@ const Nurse_Profile = () => {
   };
 
   const handleFormSubmit = () => {
-    dispatch(UpdateStudent(formData, user._id));
+    setFormData({ ...formData, DOB: formData.DOB.slice(0, 10) });
+    dispatch(UpdateStudent(formData, user.id));
     success("user updated");
+    console.log(user)
     handleOk();
   };
   const { data } = useSelector((store) => store.auth);
@@ -171,6 +174,13 @@ const Nurse_Profile = () => {
                     onChange={handleFormChange}
                     type="date"
                     placeholder="Date of birth"
+                  />
+                  <input
+                    name="image"
+                    value={formData.image}
+                    onChange={handleFormChange}
+                    type="text"
+                    placeholder="Image"
                   />
                 </form>
               </Modal>
