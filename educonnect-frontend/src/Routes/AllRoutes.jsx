@@ -13,6 +13,7 @@ import AddDoubt from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/AddDoub
 import StudentProfile from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/StudentProfile";
 import FrontPage from "../Pages/Dashboard/Main-Dashboard/GlobalFiles/FrontPage";
 import ManageStud from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/ManageStud";
+import QuestionPaper from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/QuestionPaper";
 const AllRoutes = () => {
   return (
     <>
@@ -31,6 +32,7 @@ const AllRoutes = () => {
         <Route path="/teacherprofile" element={<TeacherProfile />} />
         <Route path="/adddoubt" element={<AddDoubt />} />
         <Route path="/studentprofile" element={<StudentProfile />} />
+        <Route path="/questionpaper" element={<QuestionPaper/>}/>
       </Routes>
     </>
   );

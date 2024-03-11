@@ -44,8 +44,7 @@ router.post("/createSolve", async (req, res) => {
     }
 
     const insertResult = await executeQuery('INSERT INTO SolvedDoubts SET ?', [{doubtID,answer}]);
-    const [doubt] = await executeQuery('SELECT * FROM doubt WHERE id = ?', [insertResult.insertId]);
-    res.send({ message: "Doubt successfully created", doubt });
+    res.send({ message: "Doubt successfully created", doubt: {doubtID,answer} });
   } catch (error) {
     console.error(error);
     res.send({ error: "Something went wrong, unable to create doubt" });

@@ -201,11 +201,11 @@ const Sidebar = () => {
               </Link>
             ) : null}
 
-            {user?.userType === "teacher" || user?.userType === "student" ? (
+            {user?.userType === "teacher" ? (
               <Link
                 className="link"
                 activeclassname="active"
-                to={"/checkreports"}
+                to={"/questionpaper"}
               >
                 <div className="icon">
                   <BsFillBookmarkCheckFill className="mainIcon" />
@@ -214,7 +214,7 @@ const Sidebar = () => {
                   style={{ display: isOpen ? "block" : "none" }}
                   className="link_text"
                 >
-                  Reports
+                  Question Paper
                 </div>
               </Link>
             ) : null}

@@ -47,6 +47,17 @@ export default function dataReducer(state = initialState, { type, payload }) {
         ...state,
         doubts: [...state.doubts.filter((ele) => ele.id !== payload)],
       };
+
+      case types.INSERT_ANSWER_SUCCESS:
+        const updatedDoubt = payload;
+        const updatedDoubts = state.doubts.map((ele) =>
+          ele.id === updatedDoubt.doubtID ? { ...ele, doubtID: updatedDoubt.doubtID, answer: updatedDoubt.answer } : ele
+        );
+        console.log('Hello',updatedDoubts)
+        return {
+          ...state,
+          doubts: updatedDoubts,
+        };
     case types.DELETE_REPORT_SUCCESS:
       return {
         ...state,

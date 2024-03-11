@@ -73,6 +73,24 @@ export const deleteDoubt = (id) => async (dispatch) => {
   }
 };
 
+export const insertAnswer = ({ doubtID, answer }) => async (dispatch) => {
+  try {
+    dispatch({ type: types.INSERT_ANSWER_REQUEST });
+    const response = await axios.post(
+      process.env.REACT_APP_API_URL + "/doubts/createSolve",
+      { doubtID, answer }
+    );
+    const updatedDoubt = response.data.doubt;
+    dispatch({
+      type: types.INSERT_ANSWER_SUCCESS,
+      payload: updatedDoubt,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 // GET notice
 export const GetNotices = () => async (dispatch) => {
   try {
