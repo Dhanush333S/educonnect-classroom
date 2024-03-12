@@ -1,0 +1,34 @@
+.message-container{
+    margin: 2rem;
+    font-family: cursive;
+    font-size: 1rem;
+}
+
+.message{
+    border-radius: 15px;
+    background-color: rgb(236, 97, 120);
+    padding: 17px;
+    max-width: 40vw;
+    min-width: 10vw;
+    width: fit-content;
+    position: relative;
+}
+
+.message-mine{
+    border-radius: 15px;
+    background-color: rgba(99, 123, 240, 0.874);
+    padding: 17px;
+    max-width: 40vw;
+    min-width: 10vw;
+    width: fit-content;
+    margin-left: auto;
+    position: relative;
+}
+
+.message-time{
+    position: absolute;
+    font-size: 9px;
+    bottom: -10px;
+    color: black;
+    right: 20px;
+}

@@ -16,6 +16,7 @@ import { ImMenu } from "react-icons/im";
 import { FiLogOut } from "react-icons/fi";
 import { RiAdminLine } from "react-icons/ri";
 import { LuLink } from "react-icons/lu";
+import { LuMessagesSquare } from "react-icons/lu";
 import { MdDashboardCustomize, MdQuiz } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import "./CommonCSS.css";
@@ -257,7 +258,7 @@ const Sidebar = () => {
               </a>
             ) : null}
 
-            {user?.userType === "teacher" ? (
+            {user?.userType === "student" ? (
               <Link
                 className="link"
                 activeclassname="active"
@@ -271,6 +272,24 @@ const Sidebar = () => {
                   className="link_text"
                 >
                   Create Report
+                </div>
+              </Link>
+            ) : null}
+
+            {user?.userType === "student" || user?.userType==="teacher" ? (
+              <Link
+                className="link"
+                activeclassname="active"
+                to={"/chat"}
+              >
+                <div className="icon">
+                  <LuMessagesSquare className="mainIcon" />
+                </div>
+                <div
+                  style={{ display: isOpen ? "block" : "none" }}
+                  className="link_text"
+                >
+                  Message
                 </div>
               </Link>
             ) : null}

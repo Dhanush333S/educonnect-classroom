@@ -7,13 +7,14 @@ import AddTeacher from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/AddTeac
 import AddStudent from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/AddStudent";
 import AllDoubts from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/AllDoubts";
 import CheckReports from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/CheckReports";
-import CreateReport from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/CreateReport";
 import TeacherProfile from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/TeacherProfile";
 import AddDoubt from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/AddDoubt";
 import StudentProfile from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/StudentProfile";
 import FrontPage from "../Pages/Dashboard/Main-Dashboard/GlobalFiles/FrontPage";
 import ManageStud from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/ManageStud";
 import QuestionPaper from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/QuestionPaper";
+import CreateReport from "../Pages/Dashboard/Main-Dashboard/AllPages/Student/CreateReport";
+import Chat from "../Pages/Dashboard/Main-Dashboard/AllPages/Teacher/Chat";
 const AllRoutes = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const AllRoutes = () => {
         <Route path="/adddoubt" element={<AddDoubt />} />
         <Route path="/studentprofile" element={<StudentProfile />} />
         <Route path="/questionpaper" element={<QuestionPaper/>}/>
+        <Route path="/chat" element={<Chat/>}/>
       </Routes>
     </>
   );

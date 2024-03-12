@@ -102,18 +102,18 @@ CREATE TABLE QuestionPaper (
 
 CREATE TABLE TestResults (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  studentID int NOT NULL,
+  studentID BIGINT NOT NULL,
   testID BIGINT NOT NULL,
   questionNumber INT NOT NULL,
   marksObtained INT NOT NULL,
   CONSTRAINT unique_result UNIQUE (studentID, testID, questionNumber),
-  FOREIGN KEY (studentID) REFERENCES student(id) ON DELETE CASCADE,
+  FOREIGN KEY (studentID) REFERENCES student(studentID) ON DELETE CASCADE,
   FOREIGN KEY (testID, questionNumber) REFERENCES QuestionPaper(testID, questionNumber) ON DELETE CASCADE
 );
 
 CREATE TABLE GradeSchema (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  grade VARCHAR(255) NOT NULL,
+  grade VARCHAR(255) NOT NULL UNIQUE,
   minMarks INT NOT NULL,
   maxMarks INT NOT NULL,
   details VARCHAR(255) NOT NULL
