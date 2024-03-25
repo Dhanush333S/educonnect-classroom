@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "65f0341ea837e35c6b4e525e"
+  },
+  "sender": "1709300309004",
+  "receiver": "1709299112629",
+  "message": "I am Batman",
+  "time": {
+    "$date": "2024-03-12T10:53:18.749Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f03659a837e35c6b4e5260"
+  },
+  "sender": "1709300309004",
+  "receiver": "1709299112629",
+  "message": "Hello I am your counsellor from here after",
+  "time": {
+    "$date": "2024-03-12T11:02:49.225Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f037bba837e35c6b4e5262"
+  },
+  "sender": "1709299112629",
+  "receiver": "1709300309004",
+  "message": "I am your student Sir",
+  "time": {
+    "$date": "2024-03-12T11:08:43.009Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f038f3a837e35c6b4e5264"
+  },
+  "sender": "1709300309004",
+  "receiver": "1709299112629",
+  "message": "Yes Nice to meet you",
+  "time": {
+    "$date": "2024-03-12T11:13:55.532Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f03f36a8bb1c6b4074f0a6"
+  },
+  "sender": "1709300309004",
+  "receiver": "1709299112629",
+  "message": "I will give u some problems to solve",
+  "time": {
+    "$date": "2024-03-12T11:40:39.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f04580dce617a66b9c5f77"
+  },
+  "sender": "1709300309004",
+  "receiver": "1709299112629",
+  "message": "What is 1+1 ?",
+  "time": {
+    "$date": "2024-03-12T12:07:28.612Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f04808a3527d643dd02a84"
+  },
+  "sender": "1709299112629",
+  "receiver": "1709300309004",
+  "message": "It is 2 sir",
+  "time": {
+    "$date": "2024-03-12T12:18:16.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f061f95a491ef9d2627a51"
+  },
+  "sender": "1709299112629",
+  "receiver": "1709300309004",
+  "message": "When is the test scheduled Sir?",
+  "time": {
+    "$date": "2024-03-12T14:08:58.403Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f0657e5a491ef9d2627a59"
+  },
+  "sender": "1710253028432",
+  "receiver": "1709982549957",
+  "message": "Hello sir what did u invent",
+  "time": {
+    "$date": "2024-03-12T14:23:58.964Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65f065b65a491ef9d2627a5f"
+  },
+  "sender": "1709982549957",
+  "receiver": "1710253028432",
+  "message": "I invented Raman Effect my child",
+  "time": {
+    "$date": "2024-03-12T14:24:54.875Z"
+  },
+  "__v": 0
+}]
