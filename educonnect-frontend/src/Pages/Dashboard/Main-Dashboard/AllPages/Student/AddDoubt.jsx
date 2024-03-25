@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {
-  AddDoubts, GetTeachers,
-} from "../../../../../Redux/Datas/action";
+import { AddDoubts, GetTeachers } from "../../../../../Redux/Datas/action";
 import Sidebar from "../../GlobalFiles/Sidebar";
 import { Navigate } from "react-router-dom";
 
@@ -14,9 +12,9 @@ const notify = (text) => toast(text);
 const AddDoubt = () => {
   const [loading, setLoading] = useState(false);
 
-  const teachers=useSelector((store)=> store.data.teachers)
+  const teachers = useSelector((store) => store.data.teachers);
 
-  console.log(teachers)
+  console.log(teachers);
 
   const dispatch = useDispatch();
 
@@ -25,8 +23,12 @@ const AddDoubt = () => {
   }, [dispatch]);
 
   const uniqueTeacherPairs = teachers
-  ? Array.from(new Set(teachers.map((teacher) => `${teacher.teacherName}|${teacher.email}`)))
-  : [];
+    ? Array.from(
+        new Set(
+          teachers.map((teacher) => `${teacher.teacherName}|${teacher.email}`)
+        )
+      )
+    : [];
 
   const { data } = useSelector((store) => store.auth);
 
@@ -36,7 +38,7 @@ const AddDoubt = () => {
     subject: "",
     teacherID: "",
     date: "",
-    details: ""
+    details: "",
   };
   const [AddDoubt, setAddDoubt] = useState(InitData);
 
@@ -44,7 +46,7 @@ const AddDoubt = () => {
     setAddDoubt({ ...AddDoubt, [e.target.name]: e.target.value });
   };
 
-  const HandleOnsubmitAppointment = (e) => {
+  const HandleOnsubmitAppointment = async (e) => {
     e.preventDefault();
     if (
       AddDoubt.class === "" ||
@@ -55,22 +57,37 @@ const AddDoubt = () => {
     ) {
       return notify("Please Enter All the Requried Feilds");
     }
-    let TName=AddDoubt.teacherID.split("|")[0]
-    let TEmail=AddDoubt.teacherID.split("|")[1]
+    console.log(AddDoubt.details);
+    const formData = new FormData();
+    formData.append("comment", AddDoubt.details);
+    const response = await fetch("http://localhost:8000/", {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+    console.log(result);
+    if (result.result === "Offensive") {
+      return notify("Doubt contains offensive language. Please revise.");
+    }
+    let TName = AddDoubt.teacherID.split("|")[0];
+    let TEmail = AddDoubt.teacherID.split("|")[1];
     const isMatchingTeacher = teachers.some(
       (teacher) =>
         teacher.teacherName === TName &&
-        (teacher.subject.toLowerCase()) === AddDoubt.subject.toLowerCase()
+        teacher.subject.toLowerCase() === AddDoubt.subject.toLowerCase()
     );
 
-    if (!isMatchingTeacher){
-      return notify("Teacher and Subject not Matching")
+    if (!isMatchingTeacher) {
+      return notify("Teacher and Subject not Matching");
     }
-    
+
     setLoading(true);
 
-    const selectedTeacher = teachers.find((teacher) => teacher.teacherName === TName && teacher.email === TEmail);
-    dispatch(AddDoubts({...AddDoubt,teacherID:selectedTeacher.id}));
+    const selectedTeacher = teachers.find(
+      (teacher) => teacher.teacherName === TName && teacher.email === TEmail
+    );
+    dispatch(AddDoubts({ ...AddDoubt, teacherID: selectedTeacher.id }));
     notify("Doubt Asked");
     setLoading(false);
     setAddDoubt(InitData);
@@ -171,11 +188,11 @@ const AddDoubt = () => {
                     required
                   >
                     <option value="">Select teacher</option>
-                    {
-                      uniqueTeacherPairs.map(teacher=>
-                        <option key={teacher} value={teacher}>{teacher}</option>
-                        )
-                    }
+                    {uniqueTeacherPairs.map((teacher) => (
+                      <option key={teacher} value={teacher}>
+                        {teacher}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>

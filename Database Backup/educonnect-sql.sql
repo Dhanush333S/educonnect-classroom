@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `educonnect` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `educonnect`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: educonnect
@@ -75,7 +73,7 @@ CREATE TABLE `doubt` (
   KEY `teacherID` (`teacherID`),
   CONSTRAINT `doubt_ibfk_1` FOREIGN KEY (`studentID`) REFERENCES `student` (`id`) ON DELETE CASCADE,
   CONSTRAINT `doubt_ibfk_2` FOREIGN KEY (`teacherID`) REFERENCES `teacher` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +82,7 @@ CREATE TABLE `doubt` (
 
 LOCK TABLES `doubt` WRITE;
 /*!40000 ALTER TABLE `doubt` DISABLE KEYS */;
-INSERT INTO `doubt` VALUES (1,'5',1,'Physics',1,'What is H20 ?','2024-03-09 15:21:31'),(2,'5',1,'Chemistry',1,'What is Kinetic Energy ?','2024-03-09 15:27:31'),(4,'8',1,'Physics',2,'What is 4*4 ?','2024-03-10 00:00:00'),(9,'5',1,'Chemistry',1,'What is 2+2?','2024-03-11 12:14:13');
+INSERT INTO `doubt` VALUES (1,'5',1,'Physics',1,'What is H20 ?','2024-03-09 15:21:31'),(2,'5',1,'Chemistry',1,'What is Kinetic Energy ?','2024-03-09 15:27:31'),(4,'8',1,'Physics',2,'What is 4*4 ?','2024-03-10 00:00:00'),(9,'5',1,'Chemistry',1,'What is 2+2?','2024-03-11 12:14:13'),(11,'7',1,'Physics',1,'What is potential energy ?','2024-03-12 00:00:00');
 /*!40000 ALTER TABLE `doubt` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +137,7 @@ CREATE TABLE `manage` (
 
 LOCK TABLES `manage` WRITE;
 /*!40000 ALTER TABLE `manage` DISABLE KEYS */;
-INSERT INTO `manage` VALUES (1,1),(2,1);
+INSERT INTO `manage` VALUES (1,1),(2,1),(2,2),(3,2);
 /*!40000 ALTER TABLE `manage` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,7 +154,7 @@ CREATE TABLE `notice` (
   `title` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +163,7 @@ CREATE TABLE `notice` (
 
 LOCK TABLES `notice` WRITE;
 /*!40000 ALTER TABLE `notice` DISABLE KEYS */;
-INSERT INTO `notice` VALUES (1,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-09 11:10:02'),(2,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-01 06:48:14'),(3,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-01 00:00:00'),(4,'Need to evacuate','Gun Fire','2024-03-09 12:33:03'),(5,'Tomorrow test will be held','Test Commencement','2024-03-10 00:00:00');
+INSERT INTO `notice` VALUES (1,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-09 11:10:02'),(2,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-01 06:48:14'),(3,'Due to Holi Holiday has been declared','Holiday Declaration !!','2024-03-01 00:00:00'),(4,'Need to evacuate','Gun Fire','2024-03-09 12:33:03'),(5,'Tomorrow test will be held','Test Commencement','2024-03-10 00:00:00'),(6,'Tomorrow is Internals','Alert Internals','2024-03-13 00:00:00');
 /*!40000 ALTER TABLE `notice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +216,7 @@ CREATE TABLE `solveddoubts` (
 
 LOCK TABLES `solveddoubts` WRITE;
 /*!40000 ALTER TABLE `solveddoubts` DISABLE KEYS */;
-INSERT INTO `solveddoubts` VALUES (1,'It is water\'s chemical formula');
+INSERT INTO `solveddoubts` VALUES (1,'It is water\'s chemical formula'),(11,'It is energy stored in body');
 /*!40000 ALTER TABLE `solveddoubts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +245,7 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `studentID` (`studentID`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +254,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'student',1709299112629,'Ram',9876543211,'ssdhanush.cs21@rvce.edu.in','123456',13,'Male','2010-11-01','Bengaluru','5','https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg','Brave Enthusiastic'),(2,'student',1710056325477,'Hari',123467890,'mafej17123@sfpixel.com','123456',21,'Male','2002-10-02','Near RV ','7','https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg','Bad Boy');
+INSERT INTO `student` VALUES (1,'student',1709299112629,'Ram',9876543210,'ssdhanush.cs21@rvce.edu.in','123456',13,'female','2010-10-31','Bengaluru','5','https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg','Brave Enthusiastic'),(2,'student',1710056325477,'Hari',123467890,'mafej17123@sfpixel.com','123456',21,'Male','2002-10-02','Near RV ','7','https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg','Bad Boy'),(3,'student',1710253028432,'Rajesh',1234567890,'dosafow737@fryshare.com','123456',20,'Male','2003-12-09','Near RV ','8','https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg','Rajesh Eat 5 star do nothing');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +292,7 @@ CREATE TABLE `teacher` (
 
 LOCK TABLES `teacher` WRITE;
 /*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
-INSERT INTO `teacher` VALUES (1,'teacher',1709300309004,'M. Visvesvaraya',9876123450,'dhanush.placements333@gmail.com','123456',41,'male','1982-12-09','Mysore','Engineering','https://img.etimg.com/thumb/msid-60528918,width-640,height-480,imgsize-61859,resizemode-4/the-father-of-indian-engineering.jpg','A great man'),(2,'teacher',1709982549957,'C V Raman',1234567890,'rvce@gmail.com','123456',41,'male','1982-12-09','Mysore','Engineering','https://akm-img-a-in.tosshub.com/indiatoday/images/story/202111/raman_647_110716100405_1200x768.jpeg?size=1200:675','A great man'),(10,'teacher',1710056445587,'Radhakrishnan',123467890,'mafej17123@sfpixel.com','123456',33,'Male','1990-10-02','Near RV ','MD BE Btech','https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg','Good Teacher');
+INSERT INTO `teacher` VALUES (1,'teacher',1709300309004,'M. Visvesvaraya',9876123450,'dhanush.placements333@gmail.com','123456',41,'male','1982-12-08','Mysore','Engineering','https://img.etimg.com/thumb/msid-60528918,width-640,height-480,imgsize-61859,resizemode-4/the-father-of-indian-engineering.jpg','A great man'),(2,'teacher',1709982549957,'C V Raman',1234567890,'rvce@gmail.com','123456',41,'male','1982-12-09','Mysore','Engineering','https://akm-img-a-in.tosshub.com/indiatoday/images/story/202111/raman_647_110716100405_1200x768.jpeg?size=1200:675','A great man'),(10,'teacher',1710056445587,'Radhakrishnan',123467890,'mafej17123@sfpixel.com','123456',33,'Male','1990-10-02','Near RV ','MD BE Btech','https://res.cloudinary.com/diverse/image/upload/v1674562453/diverse/oipm1ecb1yudf9eln7az.jpg','Good Teacher');
 /*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +311,7 @@ CREATE TABLE `teacherassignment` (
   PRIMARY KEY (`id`),
   KEY `teacherID` (`teacherID`),
   CONSTRAINT `teacherassignment_ibfk_1` FOREIGN KEY (`teacherID`) REFERENCES `teacher` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -322,7 +320,7 @@ CREATE TABLE `teacherassignment` (
 
 LOCK TABLES `teacherassignment` WRITE;
 /*!40000 ALTER TABLE `teacherassignment` DISABLE KEYS */;
-INSERT INTO `teacherassignment` VALUES (1,1,'5','Math'),(2,2,'5','Physics'),(3,1,'5','Science'),(8,1,'7','Physics');
+INSERT INTO `teacherassignment` VALUES (1,1,'5','Math'),(2,2,'5','Physics'),(3,1,'5','Science'),(8,1,'7','Physics'),(9,1,'6','General');
 /*!40000 ALTER TABLE `teacherassignment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-12 19:09:16
+-- Dump completed on 2024-03-25 15:21:54
