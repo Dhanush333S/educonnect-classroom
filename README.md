@@ -14,3 +14,8 @@ Start the Frontend Folder by running :
   npm run start
 
 Make sure you are in the right directory while inputting the cmd
+
+
+Inside AIML- integrate folder modify :
+copy paste Model Model/logistic_regression_model.joblib
+and Dataset folder Dataset/modified_train.csv as per in the flsak_app.py code
