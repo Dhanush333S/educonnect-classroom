@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./CSS/AddButton.css";
 import { Navigate } from "react-router-dom";
-import { GetTeachers } from "../../../../../Redux/Datas/action";
+import { GetAllTeachers } from "../../../../../Redux/Datas/action";
 import axios from "axios";
 
 const notify = (text) => toast(text);
@@ -115,7 +115,7 @@ function ManageStud() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(GetTeachers());
+    dispatch(GetAllTeachers());
   }, [dispatch]);
 
   const uniqueTeacherPairs = teachers

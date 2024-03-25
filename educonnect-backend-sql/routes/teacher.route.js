@@ -4,6 +4,17 @@ const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
+router.get("/allTeachers", async (req, res) => {
+  try {
+    const teacher = await executeQuery('SELECT id,teacherID,teacherName,email FROM teacher');
+    res.status(200).send(teacher);
+  } catch (error) {
+    console.error(error);
+    res.status(400).send({ error: "Something went wrong" });
+  }
+});
+
+
 router.get("/", async (req, res) => {
   try {
     const teacher = await executeQuery('SELECT T.id,T.teacherID,teacherName,email,subject FROM teacher as T, TeacherAssignment as A where T.id = A.teacherID;');

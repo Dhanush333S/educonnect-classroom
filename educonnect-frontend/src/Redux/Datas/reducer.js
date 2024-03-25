@@ -35,6 +35,13 @@ export default function dataReducer(state = initialState, { type, payload }) {
         loading:false,
         teachers:payload
       } 
+
+    case types.GET_ALL_TEACHERS_SUCCESS:
+      return {
+        ...state,
+        loading:false,
+        teachers:payload
+      } 
     
     case types.GET_ALLDATA_SUCCESS:
       return {
@@ -53,7 +60,6 @@ export default function dataReducer(state = initialState, { type, payload }) {
         const updatedDoubts = state.doubts.map((ele) =>
           ele.id === updatedDoubt.doubtID ? { ...ele, doubtID: updatedDoubt.doubtID, answer: updatedDoubt.answer } : ele
         );
-        console.log('Hello',updatedDoubts)
         return {
           ...state,
           doubts: updatedDoubts,

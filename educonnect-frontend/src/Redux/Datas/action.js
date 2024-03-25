@@ -124,6 +124,22 @@ export const GetTeachers = () => async (dispatch) => {
   }
 };
 
+export const GetAllTeachers = () => async (dispatch) => {
+  try {
+    dispatch({ type: types.GET_TEACHERS_REQUEST });
+    const res = await axios.get(
+      process.env.REACT_APP_API_URL+`/teachers/allTeachers`
+    );
+    console.log("res.data");
+    dispatch({
+      type: types.GET_TEACHERS_SUCCESS,
+      payload: res.data,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // GET ALL DATA
 export const GetAllData = () => async (dispatch) => {
   try {
