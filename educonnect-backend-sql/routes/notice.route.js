@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const notices = await executeQuery('SELECT * FROM notice');
+    const notices = await executeQuery('SELECT * FROM notice order by date DESC');
     res.status(200).send(notices);
   } catch (error) {
     console.log(error);
