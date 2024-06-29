@@ -21,24 +21,22 @@ post notices, and link teachers with students for effective organizational contr
 * **CSS**
 * **Javascript**
 * **ReactJS**
+* **Redux**
 
 ## Backend 
-* **NodeJS**
-* **ExpressJS**
-* **Flask**
+* **NodeJS** -> For website
+* **Flask**  -> For NLP implementation
 
 ## Databases
+Any of the database can be used. Code for both the database is available
 * **MySQL**
 * **MongoDB**
 
-## Python Libraries (AIML)
-* **Pandas**
-* **Scikit Learn**
-* **NLP Toolkit**
-* **OpenCV**
+## NLP 
+* **Detect Offensive Language Implementation**
+* For more Details on this Code is provided here
 
-## Additional Technologies 
-* **Socket.io**
+   🔗🔗![link](https://github.com/Dhanush333S/offensive-language-detection)
 
 
 # Images of the Website
