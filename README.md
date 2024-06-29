@@ -36,7 +36,7 @@ Any of the database can be used. Code for both the database is available
 * **Detect Offensive Language Implementation**
 * For more Details on this Code is provided here
 
-   🔗🔗![link](https://github.com/Dhanush333S/offensive-language-detection)
+   🔗🔗(https://github.com/Dhanush333S/offensive-language-detection)
 
 
 # Images of the Website
