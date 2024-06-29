@@ -65,19 +65,24 @@ Any of the database can be used. Code for both the database is available
 # Installation Guidlines
 ## Backend Setup
 
-1. **Navigate to the backend directory**
+1.**Add .env file inside educonnect-frontend folder containing connection link to backend**
+   Example:
+   ```bash
+   REACT_APP_API_URL="http://localhost:5000"
+
+2. **Navigate to the backend directory**
    ```bash
    cd path/to/backend
 
-2. **Install the necessary packages**
+3. **Install the necessary packages**
    ```bash
    npm install
    
-3. **If the packages are not installed, you can initialize them**
+4. **If the packages are not installed, you can initialize them**
    ```bash
    npm init
 
-4. **Run the backend Code**
+5. **Run the backend Code**
    ```bash
    nodemon index.js
    or
@@ -97,12 +102,19 @@ Any of the database can be used. Code for both the database is available
 
 ## AIML Integration
 
-1. **Navigate to the `AIML-integrate` folder**
+1. **Neglect AIML Integration if it is not of concern**
+      It is extra feature added to the project to avoid someone from commiting offensive comments.
+     
+3. **Navigate to the `AIML-integrate` folder**
    ```bash
    cd path/to/AIML-integrate
-2. **Copy the model file and the dataset file**
+   
+3. **Copy the model file and the dataset file**
    ```bash
     Model/logistic_regression_model.joblib
     Dataset/modified_train.csv
-3. **Modify the `flask_app.py` code to ensure it points to the correct paths for the model and the dataset**
+4. **Modify the `flask_app.py` code to ensure it points to the correct paths for the model and the dataset**
+    ```bash
+   python ./flask_app.py
+5. **Make sure to replace "localhost:8000" with backend link in React frontend on which flask is running**
 
