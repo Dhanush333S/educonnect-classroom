@@ -70,23 +70,25 @@ Any of the database can be used. Code for both the database is available
    
    > REACT_APP_API_URL="http://localhost:5000"
 
-2. **Navigate to the backend directory**
+2.**Navigate to the backend directory**
    
    > cd path/to/backend
 
-3. **Install the necessary packages**
-   ```bash
-   npm install
-   
-4. **If the packages are not installed, you can initialize them**
-   ```bash
-   npm init
+3.**Install the necessary packages**
 
-5. **Run the backend Code**
-   ```bash
-   nodemon index.js
-   or
-   node index.js
+   >npm install
+   
+4.**If the packages are not installed, you can initialize them**
+  
+   >npm init
+
+5.**Run the backend Code**
+   
+   >nodemon index.js
+>
+   >or
+>
+   >node index.js
 
 ## Frontend Setup
 
