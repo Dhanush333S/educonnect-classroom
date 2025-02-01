@@ -67,12 +67,12 @@ Any of the database can be used. Code for both the database is available
 
 1.**Add .env file inside educonnect-frontend folder containing connection link to backend**
    Example:
-   ```bash
-   REACT_APP_API_URL="http://localhost:5000"
+   
+   > REACT_APP_API_URL="http://localhost:5000"
 
 2. **Navigate to the backend directory**
-   ```bash
-   cd path/to/backend
+   
+   > cd path/to/backend
 
 3. **Install the necessary packages**
    ```bash
