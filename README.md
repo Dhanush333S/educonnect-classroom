@@ -86,7 +86,7 @@ Any of the database can be used. Code for both the database is available
    
    >nodemon index.js
 >
-   >or
+   or
 >
    >node index.js
 
